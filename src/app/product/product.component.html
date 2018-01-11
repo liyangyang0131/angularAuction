@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="请输入商品名称进行搜索" [formControl]="productNameSearch">
+    </div>
+  </div>
+  <div class="col-sm-4" *ngFor="let item of products | filter:'name':kw">
+    <div class="thumbnail">
+      <img src="http://placehold.it/320x150" alt="">
+      <div class="caption">
+        <span class="pull-right">{{item.price}}元</span>
+        <span><a routerLink="/productDetail/{{item.id}}">{{item.name}}</a></span>
+        <!--<span><a [routerLink]="['/productDetail',item.id]">{{item.name}}</a></span>-->
+        <p>{{item.desc}}</p>
+      </div>
+      <app-stars [rating]="item.stars"></app-stars>
+    </div>
+  </div>
+</div>
+
