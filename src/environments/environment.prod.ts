@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  evn:'生产环境'
 };

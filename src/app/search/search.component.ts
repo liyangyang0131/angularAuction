@@ -29,7 +29,8 @@ export class SearchComponent implements OnInit {
 
   submit() {
     if (this.searchForm.valid) {
-      console.log(this.searchForm.value);
+      // console.log(this.searchForm.value);
+      this.productService.searchEvent.emit(this.searchForm.value);
     }
   }
 }

@@ -1,3 +1,4 @@
+<script src="../../../node_modules/@angular/http/http.d.ts"></script>
 <form novalidate [formGroup]="searchForm" (ngSubmit)="submit()">
   <div class="form-group" [class.has-error]="searchForm.hasError('minlength','productTitle')">
     <label class="label-control" for="productTitle">商品名称：</label>

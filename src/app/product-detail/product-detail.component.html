@@ -1,18 +1,24 @@
 <div class="thumbnail">
   <img src="http://placehold.it/300x80" alt="">
   <div class="caption">
-    <h4>{{product.name}}</h4>
-    <span class="pull-right">{{product.price}}元</span>
-    <span>{{product.desc}}</span>
+    <h4>{{product?.name}}</h4>
+    <span class="pull-right">{{product?.price}}元</span>
+    <span>{{product?.desc}}</span>
     <div style="margin-top:5px">
-      <app-stars [rating]="product.stars"></app-stars>
+      <app-stars [rating]="product?.stars"></app-stars>
     </div>
   </div>
 </div>
 
+<section style="margin-bottom:20px;">
+  <button class="btn btn-default"  (click)="productPriceWatch()">{{isWatched?"取消关注":"关注"}}
+  </button>
+  <span>最新商品报价{{currentBid | number:'.2-2'}}元</span>
+</section>
+
 <section class="comment">
   <aside>
-    <span>共有{{comments.length}}条评论</span>
+    <span>共有{{comments?.length}}条评论</span>
   </aside>
   <aside style="margin:10px 0">
     <button type="button" class="btn btn-success" (click) = 'isCommentHidden = !isCommentHidden'>发表评论</button>
